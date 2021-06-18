@@ -1,7 +1,8 @@
 module SlackNotify
   module Connection
     def send_payload(payload)
-      conn = Faraday.new(@webhook_url) do |c|
+      #conn = Faraday.new(@webhook_url) do |c|
+      conn = Faraday.new(https://hooks.slack.com/services/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) do |c|
         c.use(Faraday::Request::UrlEncoded)
         c.adapter(Faraday.default_adapter)
         c.options.timeout      = 5
